@@ -1,17 +1,15 @@
 # Regex - Date Format Tutorial
 
-Regex is used as a way to quickly find and/or replace strings or characters through the use of searching with metacharacters. Regex is a string of metacharacters used to define a particular search pattern.
+Regex is a powerful tool that enables us to efficiently search for and replace strings or characters by utilizing metacharacters. It consists of a string of metacharacters that define a specific search pattern.
 
-In this tutorial, we will look at how a Regex Expression can be used to format 
+In this tutorial, we will focus on a regex string designed to identify dates in the format dd-MM-YYYY. Our regex string comprises three distinct sub-strings combined with an OR operator ( | ), each targeting the day, month, and year separately. Below is the code snippet with the separated sub-strings.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+This tutorial lloks specifically at the following regex used to find dates in the format of dd-MM-YYYY:.
+This regex is composed of 3 strings, joined with an OR operator ( | ), and I have separated them out below in the code snippet.
 
-This tutorial will be looking specifically at the following regex which is used to find dates in the format of dd-MM-YYYY:.
-The Regex string is composed of 3 differenct string combined with an OR operator ( | ), and I have separated them out below in the code snippet.
-
-There are 3 different string - one for each component of the date format - day - month - year:
+The three strings look for each component in the date format - day, month, and year - respectively.
 
 ```
 ^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|
@@ -34,16 +32,16 @@ There are 3 different string - one for each component of the date format - day -
 ## Regex Components
 
 - This Regex is composed of the following components:
-    - Character Classes - specific sets of characters which can be used in the search.
+    - Character Classes - specific sets of characters used in the search.
     - Anchors - find the starting and ending points of a string.
-    - Escaping Characters - can be used to insert reversed, special, and unicode characters.
+    - Escaping Characters - can be used to insert reversed, special and unicode characters.
     - Groups & References - match a pattern multiple times within a string.
-    - Quantifiers & Alternation - specify how many of a character should be matched.
+    - Quantifiers & Alternation - specify how many characters should match.
 
 
 ### Anchors
 
-- Anchors are used to identify the beginning and the end of the string.
+- Anchors are used to identify the beginning and end of the string.
 - Our entire regex string is actually composed of 3 different strings - one for the day, month, and year respectively - and they are all wrapped with the following opening and closing anchors:
     - Opening Anchor: ```^```
     - Closing Anchor: ```$```
@@ -57,7 +55,7 @@ There are 3 different string - one for each component of the date format - day -
 
 ### Grouping Constructs
 
-- Grouping can either be used as a "non-capture group" or "capture group". 
+- Grouping can be used as a "non-capture group" or "capture group". 
 - Non-capture Group - groups up multiple tokens without creating a capture group. In our examples, these are typically nested within eachother, with a capture group also nested inside:
     - ``` (?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2)) ```
     - ``` (?:31(\/|-|\.)(?:0?[13578]|1[02])) ```
